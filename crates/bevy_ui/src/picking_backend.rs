@@ -188,7 +188,7 @@ pub fn ui_picking(
 
         let node_rect = Rect::from_center_size(
             node.global_transform.translation().truncate(),
-            node.node.size(),
+            node.node.size() * node.global_transform.scale().x,
         );
 
         // Nodes with Display::None have a (0., 0.) logical rect and can be ignored
